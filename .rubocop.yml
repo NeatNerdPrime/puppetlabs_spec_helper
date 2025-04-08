@@ -4,6 +4,16 @@ inherit_from: .rubocop_todo.yml
 inherit_gem:
   voxpupuli-rubocop: rubocop.yml
 
+AllCops:
+  Exclude:
+    - Gemfile
+    - Rakefile
+    - spec/fixtures/**/*
+    - vendor/bundle/**/*
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: '3.1'
+
 # Disabled
 Style/ClassAndModuleChildren:
   Enabled: false

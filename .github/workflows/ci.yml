@@ -19,7 +19,6 @@ jobs:
       fail-fast: false
       matrix:
         ruby_version:
-          - '2.7'
           - '3.2'
           - '3.3'
     name: "spec (ruby ${{ matrix.ruby_version }})"
@@ -35,12 +34,9 @@ jobs:
       fail-fast: false
       matrix:
         ruby_version:
-          - '2.7'
           - '3.2'
           - '3.3'
         include:
-          - ruby_version: '2.7'
-            puppet_version: '~> 7.0'
           - ruby_version: '3.2'
             puppet_version: '~> 8.0'
           - ruby_version: '3.3'
