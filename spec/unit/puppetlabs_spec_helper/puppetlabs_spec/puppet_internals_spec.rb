@@ -32,7 +32,7 @@ describe PuppetlabsSpec::PuppetInternals do
     let(:node) { described_class.node }
 
     it 'can have a defined node' do
-      expect(described_class.compiler(node: node).node).to be node
+      expect(described_class.compiler(node:).node).to be node
     end
   end
 
@@ -60,12 +60,12 @@ describe PuppetlabsSpec::PuppetInternals do
     it 'accepts an injected scope' do
       expect(Puppet::Parser::Functions).to receive(:function).with('my_func').and_return(true)
       expect(scope).to receive(:method).with(:function_my_func).and_return(:fake_method)
-      expect(described_class.function_method('my_func', scope: scope)).to eq(:fake_method)
+      expect(described_class.function_method('my_func', scope:)).to eq(:fake_method)
     end
 
     it "returns nil if the function doesn't exist" do
       expect(Puppet::Parser::Functions).to receive(:function).with('my_func').and_return(false)
-      expect(described_class.function_method('my_func', scope: scope)).to be_nil
+      expect(described_class.function_method('my_func', scope:)).to be_nil
     end
   end
 end
