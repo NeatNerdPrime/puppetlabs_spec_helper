@@ -29,7 +29,7 @@ group :development do
 
   gem 'rake'
   gem 'rspec', '~> 3.1'
-  gem 'rspec-its', '~> 1.0'
+  gem 'rspec-its', '>= 1.0', '< 3'
 
   gem 'fakefs'
   gem 'yard'
